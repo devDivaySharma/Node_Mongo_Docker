@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 const config = {
     name: 'sample-express-app',
-    port: 4000,
+    port: 3000,
     host: '0.0.0.0',
 };
 
@@ -66,7 +66,7 @@ app.get('/', (req, res) => {
 
 const mongoose = require('mongoose');
 const ToDo = require('./toDoModel.js').ToDo;
-const DB_URI = 'mongodb://localhost:27018/toDoApp';
+const DB_URI = 'mongodb://mongo:27018/toDoApp';
 
 mongoose.connect(DB_URI).then((v) =>{
     app.listen(config.port, config.host, (e)=> {
